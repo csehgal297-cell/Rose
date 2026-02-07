@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Happy Rose Day ❤️</title>
+
+<style>
+body {
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background: linear-gradient(135deg,#ff4e8a,#ff9a9e);
+  font-family: Arial, sans-serif;
+  overflow:hidden;
+}
+
+.card {
+  background:white;
+  padding:40px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+  animation: pop 1s ease;
+}
+
+@keyframes pop {
+  from { transform:scale(0); }
+  to { transform:scale(1); }
+}
+
+h1 {
+  color:#ff3366;
+}
+
+button {
+  padding:12px 25px;
+  border:none;
+  border-radius:25px;
+  background:#ff3366;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover {
+  background:#ff0044;
+  transform:scale(1.1);
+}
+
+.heart {
+  position:absolute;
+  color:red;
+  font-size:20px;
+  animation: float 4s linear infinite;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(100vh) scale(1);
+    opacity:1;
+  }
+  to {
+    transform: translateY(-10vh) scale(2);
+    opacity:0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>🌹 Happy Rose Day My Love 🌹</h1>
+  <p>You are the most beautiful part of my life ❤️</p>
+  <button onclick="surprise()">Click for Surprise</button>
+</div>
+
+<script>
+function surprise() {
+  alert("You are my forever rose 🌹 I love you so much ❤️");
+
+  for(let i=0;i<30;i++){
+    let heart = document.createElement("div");
+    heart.innerHTML = "❤️";
+    heart.className = "heart";
+    heart.style.left = Math.random()*100 + "vw";
+    heart.style.animationDuration = (Math.random()*3+2) + "s";
+    document.body.appendChild(heart);
+  }
+}
+</script>
+
+</body>
+</html>
